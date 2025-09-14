@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ui-card',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './ui-card.html',
-  styleUrl: './ui-card.scss'
+  styleUrl: './ui-card.scss',
 })
 export class UiCard {
-
+  @Input() inputClass = '';
 }

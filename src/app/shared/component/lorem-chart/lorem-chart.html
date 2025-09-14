@@ -1,6 +1,7 @@
 <div class="bg-gray-25 rounded-lg p-4 flex flex-col gap-2">
   <div class="flex w-full justify-center items-center overflow-scroll">
-    <div class="flex flex-col items-center">
+    <div (mouseenter)="op.toggle($event)" (mouseleave)="op.toggle($event)"
+      class="cursor-pointer flex flex-col items-center">
       <svg width="59" height="60" viewBox="0 0 59 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="26.5" cy="33.37" r="26.46" fill="#FFF1F0" />
         <path
@@ -27,13 +28,43 @@
       </p>
     </div>
 
+    <p-popover #op>
+      <app-node-details></app-node-details>
+    </p-popover>
+
+
     <svg width="59" height="6" viewBox="0 0 59 6" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M58.5 2.92004L54.75 0.754978L54.75 5.08511L58.5 2.92004ZM9.87787e-09 3.29504L55.125 3.29504L55.125 2.54504L-9.87729e-09 2.54504L9.87787e-09 3.29504Z"
         fill="#858D9D" />
     </svg>
 
-    <div class="flex flex-col items-center">
+    <div (mouseenter)="op2.toggle($event)" (mouseleave)="op2.toggle($event)"
+      class="cursor-pointer flex flex-col items-center">
+      <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="26.4934" cy="27.2198" r="26.46" fill="#D7EAFF" />
+        <path
+          d="M19.0615 21.4298H19.0725M19.0615 32.2936H19.0725M16.874 17.8086H34.374C35.5821 17.8086 36.5615 18.6192 36.5615 19.6192V23.2405C36.5615 24.2405 35.5821 25.0511 34.374 25.0511H16.874C15.6659 25.0511 14.6865 24.2405 14.6865 23.2405V19.6192C14.6865 18.6192 15.6659 17.8086 16.874 17.8086ZM16.874 28.6724H34.374C35.5821 28.6724 36.5615 29.483 36.5615 30.483V34.1042C36.5615 35.1042 35.5821 35.9149 34.374 35.9149H16.874C15.6659 35.9149 14.6865 35.1042 14.6865 34.1042V30.483C14.6865 29.483 15.6659 28.6724 16.874 28.6724Z"
+          stroke="#1873DE" stroke-width="1.81062" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+
+      <p class="text-gray-700 font-semibold text-sm">
+        Loremipsumm
+      </p>
+
+    </div>
+    <p-popover #op2>
+      <app-node-details-2></app-node-details-2>
+    </p-popover>
+
+    <svg width="59" height="6" viewBox="0 0 59 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M58.5 2.92004L54.75 0.754978L54.75 5.08511L58.5 2.92004ZM9.87787e-09 3.29504L55.125 3.29504L55.125 2.54504L-9.87729e-09 2.54504L9.87787e-09 3.29504Z"
+        fill="#858D9D" />
+    </svg>
+
+    <div (mouseenter)="op3.toggle($event)" (mouseleave)="op3.toggle($event)"
+      class="cursor-pointer flex flex-col items-center">
       <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="26.4934" cy="27.2198" r="26.46" fill="#D7EAFF" />
         <path
@@ -47,25 +78,9 @@
 
     </div>
 
-    <svg width="59" height="6" viewBox="0 0 59 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M58.5 2.92004L54.75 0.754978L54.75 5.08511L58.5 2.92004ZM9.87787e-09 3.29504L55.125 3.29504L55.125 2.54504L-9.87729e-09 2.54504L9.87787e-09 3.29504Z"
-        fill="#858D9D" />
-    </svg>
-
-    <div class="flex flex-col items-center">
-      <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="26.4934" cy="27.2198" r="26.46" fill="#D7EAFF" />
-        <path
-          d="M19.0615 21.4298H19.0725M19.0615 32.2936H19.0725M16.874 17.8086H34.374C35.5821 17.8086 36.5615 18.6192 36.5615 19.6192V23.2405C36.5615 24.2405 35.5821 25.0511 34.374 25.0511H16.874C15.6659 25.0511 14.6865 24.2405 14.6865 23.2405V19.6192C14.6865 18.6192 15.6659 17.8086 16.874 17.8086ZM16.874 28.6724H34.374C35.5821 28.6724 36.5615 29.483 36.5615 30.483V34.1042C36.5615 35.1042 35.5821 35.9149 34.374 35.9149H16.874C15.6659 35.9149 14.6865 35.1042 14.6865 34.1042V30.483C14.6865 29.483 15.6659 28.6724 16.874 28.6724Z"
-          stroke="#1873DE" stroke-width="1.81062" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-
-      <p class="text-gray-700 font-semibold text-sm">
-        Loremipsumm
-      </p>
-
-    </div>
+    <p-popover #op3>
+      <app-node-details-3></app-node-details-3>
+    </p-popover>
 
     <svg width="208" height="110" viewBox="0 0 208 110" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -77,7 +92,8 @@
     </svg>
 
     <div class="flex flex-col gap-5">
-      <div class="flex flex-col items-center">
+      <div (mouseenter)="op4.toggle($event)" (mouseleave)="op4.toggle($event)"
+        class="cursor-pointer flex flex-col items-center">
         <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="26.5" cy="31.9101" r="26.46" fill="#D7EAFF" />
           <path
@@ -97,7 +113,12 @@
         </span>
 
       </div>
-      <div class="flex flex-col items-center">
+      <p-popover #op4>
+        <app-node-details-4></app-node-details-4>
+      </p-popover>
+
+      <div (mouseenter)="op5.toggle($event)" (mouseleave)="op5.toggle($event)"
+        class="cursor-pointer flex flex-col items-center">
         <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="26.5" cy="31.9101" r="26.46" fill="#D7EAFF" />
           <path
@@ -117,6 +138,9 @@
         </span>
 
       </div>
+      <p-popover #op5>
+        <app-node-details-5></app-node-details-5>
+      </p-popover>
     </div>
   </div>
 

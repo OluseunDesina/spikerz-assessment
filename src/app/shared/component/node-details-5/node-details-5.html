@@ -1,0 +1,64 @@
+<app-ui-card [inputClass]="'!mx-auto !space-y-6 !p-6'">
+  <!-- Header: icon + name + ip -->
+  <div class="flex items-center gap-3">
+    <svg width="45" height="43" viewBox="0 0 45 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="19.8448" cy="22.8448" r="19.845" fill="#D7EAFF" />
+      <g clip-path="url(#clip0_1_932)">
+        <path
+          d="M15.2036 18.1255H15.2118M15.2036 27.9693H15.2118M13.563 14.8443H26.688C27.5941 14.8443 28.3286 15.5788 28.3286 16.4849V19.7661C28.3286 20.6722 27.5941 21.4068 26.688 21.4068H13.563C12.6569 21.4068 11.9224 20.6722 11.9224 19.7661V16.4849C11.9224 15.5788 12.6569 14.8443 13.563 14.8443ZM13.563 24.688H26.688C27.5941 24.688 28.3286 25.4226 28.3286 26.3286V29.6099C28.3286 30.516 27.5941 31.2505 26.688 31.2505H13.563C12.6569 31.2505 11.9224 30.516 11.9224 29.6099V26.3286C11.9224 25.4226 12.6569 24.688 13.563 24.688Z"
+          stroke="#1873DE" stroke-width="1.64062" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      <rect x="24.6899" width="19.4795" height="19.4795" rx="9.73975" fill="#E6372B" />
+      <g clip-path="url(#clip1_1_932)">
+        <path
+          d="M36.0387 8.23881L33.0354 11.2421M33.0354 8.23881L36.0387 11.2421M39.3424 10.3411C39.3424 13.3445 37.24 14.8462 34.7413 15.7171C34.6104 15.7615 34.4683 15.7593 34.3388 15.7111C31.834 14.8462 29.7317 13.3445 29.7317 10.3411V6.13648C29.7317 5.97717 29.795 5.82439 29.9076 5.71174C30.0203 5.59909 30.173 5.53581 30.3324 5.53581C31.5337 5.53581 33.0354 4.81501 34.0805 3.90199C34.2078 3.79327 34.3697 3.73354 34.537 3.73354C34.7044 3.73354 34.8663 3.79327 34.9935 3.90199C36.0447 4.82101 37.5404 5.53581 38.7417 5.53581C38.901 5.53581 39.0538 5.59909 39.1664 5.71174C39.2791 5.82439 39.3424 5.97717 39.3424 6.13648V10.3411Z"
+          stroke="#FFF8F7" stroke-width="1.09566" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      <defs>
+        <clipPath id="clip0_1_932">
+          <rect width="19.6875" height="19.6875" fill="white" transform="translate(10.282 13.2039)" />
+        </clipPath>
+        <clipPath id="clip1_1_932">
+          <rect width="14.416" height="14.416" fill="white" transform="translate(27.3291 2.53149)" />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <div class="min-w-0">
+      <p class="truncate text-sm font-semibold text-gray-700">Loremipsumdolorsit002</p>
+      <p class="text-xs text-gray-500">192.168.1.2</p>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="mt-3 space-y-2">
+    <!-- Row 1 -->
+    <div class="flex items-center gap-2">
+      <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1_1004)">
+          <path
+            d="M8.75 5.19H5M10 7.69H5M8.125 10.19H5M2.5 1.44V13.94L3.75 13.315L5 13.94L6.25 13.315L7.5 13.94L8.75 13.315L10 13.94L11.25 13.315L12.5 13.94V1.44L11.25 2.065L10 1.44L8.75 2.065L7.5 1.44L6.25 2.065L5 1.44L3.75 2.065L2.5 1.44Z"
+            stroke="#858D9D" stroke-width="0.9375" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+        <defs>
+          <clipPath id="clip0_1_1004">
+            <rect width="15" height="15" fill="white" transform="translate(0 0.189999)" />
+          </clipPath>
+        </defs>
+      </svg>
+
+      <span class="text-sm font-bold text-gray-700">Lorem:</span>
+      <span class="rounded-md bg-yellow-50 px-2 py-0.5  text-sm font-semibold text-yellow-600">
+        Lorem “Ipsum”
+      </span>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex items-center gap-2">
+      <span class="text-sm font-bold text-gray-700">Loremipsum</span>
+      <span class="rounded-md bg-blue-50 px-2 py-0.5 text-sm font-semibold text-blue-700">
+        Lorem 1234, 5678
+      </span>
+    </div>
+  </div>
+</app-ui-card>
