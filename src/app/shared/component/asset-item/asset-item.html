@@ -1,5 +1,5 @@
 <li class="px-4 sm:px-5 py-4 border-t border-b border-gray-100">
-  <div class="flex justify-between items-center gap-4">
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4 min-w-0">
     <!-- left: icon + name + ip -->
     <div class="flex items-center gap-4 min-w-0">
       <!-- Icon circle -->
@@ -25,7 +25,7 @@
       </div>
     </div>
     <!-- right: badge -->
-    <div class="justify-self-end">
+    <div class="mt-2 sm:mt-0 sm:ml-auto">
       <span class="inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold"
         [ngClass]="riskClasses(row?.risk || 'Critical')">
         {{ row?.risk }}
