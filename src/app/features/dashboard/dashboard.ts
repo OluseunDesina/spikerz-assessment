@@ -6,6 +6,7 @@ import { Remidiation } from '../../shared/component/remidiation/remidiation';
 import { PageTitle } from '../../shared/component/page-title/page-title';
 import { Assets } from '../../shared/component/assets/assets';
 import { RiskChart } from '../../shared/component/risk-chart/risk-chart';
+import { LoremChart } from '../../shared/component/lorem-chart/lorem-chart';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,6 +18,7 @@ import { RiskChart } from '../../shared/component/risk-chart/risk-chart';
     PageTitle,
     Assets,
     RiskChart,
+    LoremChart,
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',

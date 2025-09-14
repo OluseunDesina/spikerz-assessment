@@ -7,7 +7,7 @@
       <!-- Legend -->
       <ul class="gap-y-4">
         @for (risk of risksArray; track $index) {
-        <li class="flex items-center gap-3">
+        <li class="flex items-center gap-3 mb-3">
           <span class="h-1.5 w-1.5 rounded-full" [style.background]="risk.color"></span>
           <span class="font-bold text-night-blue">{{ risk.value }}</span>
           <span class="text-night-blue">{{risk.name}}</span>
