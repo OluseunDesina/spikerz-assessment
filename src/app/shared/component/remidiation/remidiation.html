@@ -1,0 +1,46 @@
+<!-- app-asset-summary-card.component.html -->
+<app-ui-card>
+  <div class="p-3 cursor-pointer" (click)="toggleExpanded()">
+    <h3 class="px-2 pt-1 pb-2  font-bold">
+      <ng-content select=".server-name"></ng-content>
+    </h3>
+
+    <!-- Body -->
+    <div class="rounded-xl bg-gray-25 px-3 py-3">
+      <div class="flex items-center gap-4">
+        <!-- Icon circle -->
+        <div class="flex shrink-0 items-center justify-center h-12 w-12 rounded-full bg-blue-50">
+          <svg width="53" height="54" viewBox="0 0 53 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26.46" cy="26.6198" r="26.46" fill="#D7EAFF" />
+            <path
+              d="M20.2725 20.3278H20.2834M20.2725 33.4528H20.2834M18.085 15.9528H35.585C36.7931 15.9528 37.7725 16.9321 37.7725 18.1403V22.5153C37.7725 23.7234 36.7931 24.7028 35.585 24.7028H18.085C16.8769 24.7028 15.8975 23.7234 15.8975 22.5153V18.1403C15.8975 16.9321 16.8769 15.9528 18.085 15.9528ZM18.085 29.0778H35.585C36.7931 29.0778 37.7725 30.0571 37.7725 31.2653V35.6403C37.7725 36.8484 36.7931 37.8278 35.585 37.8278H18.085C16.8769 37.8278 15.8975 36.8484 15.8975 35.6403V31.2653C15.8975 30.0571 16.8769 29.0778 18.085 29.0778Z"
+              stroke="#1873DE" stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+
+        </div>
+
+        <!-- Label block -->
+        <div class="min-w-0">
+          <p class="text-gray-900 text-sm font-semibold leading-none">Server</p>
+          <p class="text-gray-500 text-xs leading-none mt-1">Server</p>
+        </div>
+
+        <!-- Divider -->
+        <div class="mx-4 hidden sm:block h-10 w-px bg-gray-200"></div>
+
+        <!-- Description -->
+        <p class="text-gray-900 text-sm leading-6 line-clamp-2">
+          Lorem ipsum dolor sit amet consectetur.
+        </p>
+      </div>
+    </div>
+    <!-- Expanded body with smooth transition -->
+    <div class="mt-4 overflow-hidden transition-[max-height] duration-300 ease-out"
+      [style.maxHeight]="expanded() ? '240px' : '0px'">
+      <p class="text-gray-700 leading-6 transform transition-all duration-300" [class.opacity-100]="expanded()"
+        [class.opacity-0]="!expanded()" [class.translate-y-0]="expanded()" [class.-translate-y-1]="!expanded()">
+        <ng-content .server-desc></ng-content>
+      </p>
+    </div>
+  </div>
+</app-ui-card>

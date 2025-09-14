@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+
+/* Design tokens via Tailwind v4 @theme (maps to CSS vars under the hood) */
+@theme {
+  --color-brand: #16a34a;
+  --color-surface: #f8fafc;
+  --color-text: #0f172a;
+
+  --color-risk-critical: #ef4444;
+  --color-risk-high: #1d4ed8;
+  --color-risk-medium: #f59e0b;
+  --color-risk-low: #10b981;
+  --color-green-800: #00732e;
+  --color-green-700: #02983e;
+  --color-green-50: #e9faf0;
+  --color-gray-900: #404a60;
+  --color-gray-700: #525d73;
+  --color-gray-500: #667085;
+  --color-gray-100: #e0e2e7;
+  --color-gray-25: #fafafa;
+  --color-slate-700: #334155;
+  --color-red-100: #ffe2e0;
+  --color-red-800: #c6190d;
+
+  --radius-card: 1rem;
+  --shadow-card: 0 10px 25px -10px rgb(2 6 23 / 0.1);
+
+  --sidebar-width: 250px;
+  --text-page-title: 20px;
+  --left-db-width: 385px;
+  --right-db-width: 787px;
+}
+html,
+body {
+  height: 100%;
+  background: var(--color-surface);
+  font: Public Sans;
+}

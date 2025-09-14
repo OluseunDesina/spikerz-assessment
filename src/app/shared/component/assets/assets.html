@@ -1,0 +1,45 @@
+<app-ui-card>
+  <!-- Header -->
+  <div class="flex justify-between items-center px-5 py-4 text-sm text-gray-400">
+    <span>Asset</span>
+    <span>Contextual Risk</span>
+  </div>
+
+  <!-- Rows -->
+  <ul role="list">
+    @for (row of assets(); track row.name) {
+    <app-asset-item [row]="row"></app-asset-item>
+    }
+  </ul>
+
+  <!-- Footer / pagination -->
+  <div class="flex items-center justify-center gap-6 px-5 py-4 text-gray-500">
+    <button type="button" class="disabled:opacity-40" aria-label="Previous">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="mask0_1_863" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="21">
+          <rect x="20.5" y="20.84" width="20" height="20" transform="rotate(180 20.5 20.84)" fill="#999999" />
+        </mask>
+        <g mask="url(#mask0_1_863)">
+          <path
+            d="M12.6659 5.83997L13.8325 7.00663L9.99919 10.84L13.8325 14.6733L12.6659 15.84L7.66585 10.84L12.6659 5.83997Z"
+            fill="#C2C6CE" />
+        </g>
+      </svg>
+
+    </button>
+    <span class="text-sm">{{ pageText() }}</span>
+    <button type="button" aria-label="Next">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="mask0_1_868" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="21">
+          <rect x="0.5" y="0.839966" width="20" height="20" fill="#999999" />
+        </mask>
+        <g mask="url(#mask0_1_868)">
+          <path
+            d="M8.33415 15.84L7.16748 14.6733L11.0008 10.84L7.16748 7.00663L8.33415 5.83997L13.3341 10.84L8.33415 15.84Z"
+            fill="#858D9D" />
+        </g>
+      </svg>
+
+    </button>
+  </div>
+</app-ui-card>
