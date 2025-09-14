@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Dashboard } from './features/dashboard/dashboard';
-import { DashboardLayout } from './shared/layout/dashboard-layout/dashboard-layout';
+import { DashboardLayout } from './layout/dashboard-layout/dashboard-layout';
 
 export const routes: Routes = [
   {
@@ -9,8 +9,18 @@ export const routes: Routes = [
 
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: Dashboard, title: 'Dashboard' },
-      { path: '**', component: Dashboard, title: 'Dashboard' },
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./features/dashboard/dashboard').then((m) => m.Dashboard),
+        title: 'Dashboard',
+      },
+      {
+        path: '**',
+        loadComponent: () =>
+          import('./features/dashboard/dashboard').then((m) => m.Dashboard),
+        title: 'Dashboard',
+      },
     ],
   },
 ];
