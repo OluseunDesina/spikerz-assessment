@@ -2,41 +2,55 @@ import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  HostBinding,
+  HostListener,
+  OnInit,
   signal,
 } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { TooltipModule } from 'primeng/tooltip';
 
 type NavItem = {
   id: string;
   label: string;
   icon: 'grid' | 'alert' | 'cube' | 'asterisk' | 'wrench' | 'doc' | 'hash';
+  route?: string;
 };
 
 @Component({
   selector: 'app-sidebar',
-  imports: [NgClass],
+  imports: [NgClass, RouterLink, RouterLinkActive, TooltipModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Sidebar {
+export class Sidebar implements OnInit {
+  collapsed = signal<boolean>(false);
+  MenuItems = signal<NavItem[]>([
+    { id: 'grid', label: 'Lorem', icon: 'grid', route: '/grid' },
+    { id: 'alert', label: 'Lorem', icon: 'alert', route: '/alert' },
+    { id: 'cube', label: 'Lorem', icon: 'cube', route: '/cube' },
+    { id: 'asterisk', label: 'Lorem', icon: 'asterisk', route: '/dashboard' }, // active
+    { id: 'wrench', label: 'Lorem', icon: 'wrench', route: '/wrench' },
+    { id: 'doc', label: 'Lorem', icon: 'doc', route: '/doc' },
+    { id: 'hash', label: 'Lorem', icon: 'hash', route: '/hash' },
+  ]);
+  private readonly LG_BREAKPOINT = 1024; // Tailwind lg
+
   constructor(private sanitizer: DomSanitizer) {}
 
-  // Signals
-  active = signal<string>('asterisk');
-  MenuItems = signal<NavItem[]>([
-    { id: 'grid', label: 'Lorem', icon: 'grid' },
-    { id: 'alert', label: 'Lorem', icon: 'alert' },
-    { id: 'cube', label: 'Lorem', icon: 'cube' },
-    { id: 'asterisk', label: 'Lorem', icon: 'asterisk' }, // active
-    { id: 'wrench', label: 'Lorem', icon: 'wrench' },
-    { id: 'doc', label: 'Lorem', icon: 'doc' },
-    { id: 'hash', label: 'Lorem', icon: 'hash' },
-  ]);
+  ngOnInit() {
+    this.setCollapsedByViewport();
+  }
 
-  select(id: string) {
-    this.active.set(id);
+  @HostListener('window:resize')
+  onResize() {
+    this.setCollapsedByViewport();
+  }
+
+  private setCollapsedByViewport() {
+    const shouldCollapse = window.innerWidth < this.LG_BREAKPOINT;
+    this.collapsed.set(shouldCollapse);
   }
 
   getIcon(name: string): SafeHtml {
@@ -44,7 +58,6 @@ export class Sidebar {
     return this.sanitizer.bypassSecurityTrustHtml(rawSvg);
   }
 
-  collapsed = signal<boolean>(false);
   toggleCollapse() {
     this.collapsed.update((v) => !v);
   }

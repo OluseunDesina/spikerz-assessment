@@ -16,16 +16,15 @@
   <!-- Main nav -->
   <nav class="px-5 pt-8 gap-y-2">
     @for (item of MenuItems(); track item.id) {
-    <button [title]="item.label" (click)="select(item.id)"
-      class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition hover:bg-slate-50"
-      [ngClass]="item.id === active() ? 'bg-green-50 text-slate-800 shadow-inner' : 'text-gray-700'">
-      <span class="text-slate-400" [ngClass]="{ 'text-emerald-700': item.id === active() }"
-        [innerHTML]="getIcon(item.icon)">
+    <a [routerLink]="item.route" routerLinkActive="active"
+      class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-gray-700 transition hover:bg-slate-50"
+      tooltipPosition="right">
+      <span [pTooltip]="item.label" class="text-slate-400" [innerHTML]="getIcon(item.icon)">
       </span>
       @if (!collapsed()) {
-      <span class="text-[15px]">{{ item.label }}</span>
+      <span>{{ item.label }}</span>
       }
-    </button>
+    </a>
     }
   </nav>
 

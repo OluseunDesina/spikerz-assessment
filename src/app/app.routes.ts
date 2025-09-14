@@ -6,9 +6,11 @@ export const routes: Routes = [
   {
     path: '',
     component: DashboardLayout,
+
     children: [
-      { path: '', component: Dashboard, title: 'Dashboard' },
-      { path: '**', redirectTo: '' },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: Dashboard, title: 'Dashboard' },
+      { path: '**', component: Dashboard, title: 'Dashboard' },
     ],
   },
 ];

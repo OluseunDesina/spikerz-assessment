@@ -48,3 +48,7 @@ body {
   background: var(--color-surface);
   font: Public Sans;
 }
+
+.active {
+  @apply bg-green-50 text-gray-800;
+}
