@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { UiCard } from '../ui-card/ui-card';
 import { AssetItem } from '../asset-item/asset-item';
@@ -13,7 +12,7 @@ export interface AssetRow {
 
 @Component({
   selector: 'app-assets',
-  imports: [NgClass, UiCard, AssetItem],
+  imports: [UiCard, AssetItem],
   templateUrl: './assets.html',
   styleUrl: './assets.scss',
 })

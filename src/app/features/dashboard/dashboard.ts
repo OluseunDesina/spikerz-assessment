@@ -5,11 +5,27 @@ import { KeyValueList } from '../../shared/component/key-value-list/key-value-li
 import { Remidiation } from '../../shared/component/remidiation/remidiation';
 import { PageTitle } from '../../shared/component/page-title/page-title';
 import { Assets } from '../../shared/component/assets/assets';
+import { RiskChart } from '../../shared/component/risk-chart/risk-chart';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [UiCard, TextCard, KeyValueList, Remidiation, PageTitle, Assets],
+  imports: [
+    UiCard,
+    TextCard,
+    KeyValueList,
+    Remidiation,
+    PageTitle,
+    Assets,
+    RiskChart,
+  ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
-export class Dashboard {}
+export class Dashboard {
+  riskArray = [
+    { name: 'Critical', value: 2, color: '#B91C1C' },
+    { name: 'High', value: 0, color: '#F97316' },
+    { name: 'Medium', value: 0, color: '#EAB308' },
+    { name: 'Low', value: 0, color: '#16A34A' },
+  ];
+}

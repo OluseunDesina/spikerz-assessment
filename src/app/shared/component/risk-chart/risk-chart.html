@@ -1,1 +1,32 @@
-<p>risk-chart works!</p>
+<app-ui-card class="max-w-md mx-auto h-100">
+  <div class="p-4">
+    <!-- Title -->
+    <h3 class="font-medium text-lg text-gray-500 mb-4">{{ title() }}</h3>
+
+    <div class="flex justify-between items-center gap-6">
+      <!-- Legend -->
+      <ul class="gap-y-4">
+        @for (risk of risksArray; track $index) {
+        <li class="flex items-center gap-3">
+          <span class="h-1.5 w-1.5 rounded-full" [style.background]="risk.color"></span>
+          <span class="font-bold text-night-blue">{{ risk.value }}</span>
+          <span class="text-night-blue">{{risk.name}}</span>
+        </li>
+        }
+      </ul>
+
+      <!-- Donut -->
+      <div class="relative justify-self-center md:justify-self-end">
+        <p-chart [height]="'150px'" [width]="'150px'" type="doughnut" [data]="chartData()"
+          [options]="chartOptions()"></p-chart>
+
+        <!-- Center number (sum of all or show critical—choose one) -->
+        <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div class="text-center">
+            <div class="text-4xl font-extrabold text-gray-700">{{ risksArray[0].value }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-ui-card>

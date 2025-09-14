@@ -110,8 +110,10 @@
             <app-page-title>
               Lorem ipsum dolor sit
             </app-page-title>
-
-            <app-assets></app-assets>
+            <div class="flex gap-2 items-stretch">
+              <app-assets class="h-full flex-1"></app-assets>
+              <app-risk-chart [risksArray]="riskArray" class="h-full flex-1"></app-risk-chart>
+            </div>
           </div>
         </app-ui-card>
       </div>
