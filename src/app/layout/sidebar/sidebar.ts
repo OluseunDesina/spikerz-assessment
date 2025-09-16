@@ -1,3 +1,14 @@
+/**
+ * SidebarComponent
+ * Collapsible navigation with icon-only mode on small screens.
+ *
+ * Usage:
+ * <app-sidebar [collapsed]="collapsed()" (navigate)="onNavigate($event)"></app-sidebar>
+ *
+ * Signals:
+ * - collapsed: writable signal<boolean> controlled by viewport service and user toggle.
+ * - activeRoute: computed from Router events for highlight state.
+ */
 import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,

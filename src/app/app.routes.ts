@@ -1,3 +1,8 @@
+/**
+ * App routes
+ * - Public shell renders Sidebar+Header; feature routes are lazy where possible.
+ * - Keep route data minimal; prefer injection tokens for feature flags.
+ */
 import { Routes } from '@angular/router';
 import { DashboardLayout } from './layout/dashboard-layout/dashboard-layout';
 
