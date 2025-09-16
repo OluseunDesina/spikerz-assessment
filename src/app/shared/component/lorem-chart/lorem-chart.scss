@@ -1,20 +1,13 @@
-p-popover {
-  margin-top: none;
-  background: none;
-  color: none;
-  border: 1rem;
-  border-radius: 0;
-  box-shadow: none;
-}
-p-popover {
-  margin-top: none;
-  background: none;
-  color: none;
-  border: 1rem;
-  border-radius: 0;
-  box-shadow: none;
+::ng-deep .p-popover {
+  background-color: transparent !important; /* Remove background color */
+  backdrop-filter: none !important; /* Remove any backdrop-filter effects */
+  overflow: visible !important; /* Ensure content is not clipped */
+  border: none !important; /* Remove default borders if present */
+  padding: 0;
 }
 
-.p-popover-mask {
+/* If your popover content has its own background */
+::ng-deep .p-popover .p-popover-content {
   background-color: transparent !important;
+  padding: 0;
 }

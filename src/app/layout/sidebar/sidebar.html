@@ -14,10 +14,10 @@
   </button>
 
   <!-- Main nav -->
-  <nav class="px-5 pt-8 gap-y-2">
+  <nav class="px-5 pt-8 gap-y-3">
     @if (collapsed()) {
-    <a [routerLink]="'/'" class="w-18 h-18 mx-auto rounded-xl mb-5">
-      <img src="logo.jpeg" alt="">
+    <a [routerLink]="'/'" class="w-18 h-18 mx-auto rounded-xl ">
+      <img class="my-3" src="logo.jpeg" alt="">
     </a>
     }
     @for (item of MenuItems(); track item.id) {
