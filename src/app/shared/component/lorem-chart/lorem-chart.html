@@ -1,6 +1,6 @@
 <div class="bg-gray-25 rounded-lg p-4 flex flex-col gap-2">
   <div class="flex w-full justify-center items-center overflow-scroll">
-    <div (mouseenter)="op.toggle($event)" (mouseleave)="op.toggle($event)"
+    <div (mouseenter)="onEnter($event, op)" (mouseleave)="onLeave(op)"
       class="cursor-pointer flex flex-col items-center">
       <svg width="59" height="60" viewBox="0 0 59 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="26.5" cy="33.37" r="26.46" fill="#FFF1F0" />
@@ -28,7 +28,8 @@
       </p>
     </div>
 
-    <p-popover #op>
+    <p-popover appendTo="body" [styleClass]="'rounded-lg border border-gray-200 shadow-lg bg-white p-0'"
+      [autoZIndex]="true" [baseZIndex]="1000" #op>
       <app-node-details></app-node-details>
     </p-popover>
 
@@ -39,7 +40,7 @@
         fill="#858D9D" />
     </svg>
 
-    <div (mouseenter)="op2.toggle($event)" (mouseleave)="op2.toggle($event)"
+    <div (mouseenter)="onEnter($event, op2)" (mouseleave)="onLeave(op2)"
       class="cursor-pointer flex flex-col items-center">
       <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="26.4934" cy="27.2198" r="26.46" fill="#D7EAFF" />
@@ -53,7 +54,8 @@
       </p>
 
     </div>
-    <p-popover #op2>
+    <p-popover appendTo="body" [styleClass]="'rounded-lg border border-gray-200 shadow-lg bg-white p-0'"
+      [autoZIndex]="true" [baseZIndex]="1000" #op2>
       <app-node-details-2></app-node-details-2>
     </p-popover>
 
@@ -63,7 +65,7 @@
         fill="#858D9D" />
     </svg>
 
-    <div (mouseenter)="op3.toggle($event)" (mouseleave)="op3.toggle($event)"
+    <div (mouseenter)="onEnter($event, op3)" (mouseleave)="onLeave(op3)"
       class="cursor-pointer flex flex-col items-center">
       <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="26.4934" cy="27.2198" r="26.46" fill="#D7EAFF" />
@@ -78,7 +80,8 @@
 
     </div>
 
-    <p-popover #op3>
+    <p-popover appendTo="body" [styleClass]="'rounded-lg border border-gray-200 shadow-lg bg-white p-0'"
+      [autoZIndex]="true" [baseZIndex]="1000" #op3>
       <app-node-details-3></app-node-details-3>
     </p-popover>
 
@@ -92,7 +95,7 @@
     </svg>
 
     <div class="flex flex-col gap-5">
-      <div (mouseenter)="op4.toggle($event)" (mouseleave)="op4.toggle($event)"
+      <div (mouseenter)="onEnter($event, op4)" (mouseleave)="onLeave(op4)"
         class="cursor-pointer flex flex-col items-center">
         <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="26.5" cy="31.9101" r="26.46" fill="#D7EAFF" />
@@ -113,11 +116,12 @@
         </span>
 
       </div>
-      <p-popover #op4>
+      <p-popover appendTo="body" [styleClass]="'rounded-lg border border-gray-200 shadow-lg bg-white p-0'"
+        [autoZIndex]="true" [baseZIndex]="1000" #op4>
         <app-node-details-4></app-node-details-4>
       </p-popover>
 
-      <div (mouseenter)="op5.toggle($event)" (mouseleave)="op5.toggle($event)"
+      <div (mouseenter)="onEnter($event, op5)" (mouseleave)="onLeave(op5)"
         class="cursor-pointer flex flex-col items-center">
         <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="26.5" cy="31.9101" r="26.46" fill="#D7EAFF" />
@@ -138,7 +142,8 @@
         </span>
 
       </div>
-      <p-popover #op5>
+      <p-popover appendTo="body" [styleClass]="'rounded-lg border border-gray-200 shadow-lg bg-white p-0'"
+        [autoZIndex]="true" [baseZIndex]="1000" #op5>
         <app-node-details-5></app-node-details-5>
       </p-popover>
     </div>
