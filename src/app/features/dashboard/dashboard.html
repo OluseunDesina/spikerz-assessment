@@ -1,12 +1,12 @@
-<section class="min-h-dvh w-full overflow-x-hidden bg-[var(--color-surface)] text-[var(--color-text)]">
-  <div class="mx-auto max-w-[1400px] px-2 lg:px-4 py-3">
+<section class="w-full overflow-x-hidden bg-[var(--color-surface)] text-[var(--color-text)] h-dvh min-h-0">
+  <div class="h-full mx-auto m-2 sm:m-3 md:m-4 lg:m-6">
     <!-- Shell -->
-    <!-- <div class="flex gap-3"> -->
-    <div class="flex flex-col lg:flex-row gap-3 lg:gap-4 min-w-0">
-      <!-- <div class="left-side w-[var(--left-db-width)] shrink-0"> -->
-      <div class="left-side w-full lg:w-[var(--left-db-width)] shrink-0 min-w-0">
+    <div class="h-full min-h-0 flex flex-col lg:flex-row gap-3 lg:gap-4 min-w-0">
+      <!-- left hand side of the dashboard -->
+      <div class="left-side w-full lg:w-[var(--left-db-width)] shrink-0 min-w-0 min-h-0 overflow-y-auto">
+        <!-- <div class="left-side w-full lg:w-[var(--left-db-width)] shrink-0 min-w-0"> -->
         <app-ui-card>
-          <div class="flex flex-col gap-4 px-[30px] py-[20px]">
+          <div class="flex flex-col gap-4 px-card-x py-card-y">
             <app-text-card>
               <div id="pageTitle">Description</div>
               <div id="text">Lorem ipsum dolor sit amet consectetur. Aenean sodales pellentesque gravida nibh et magna
@@ -102,21 +102,20 @@
           </div>
         </app-ui-card>
       </div>
-      <!-- <div class="right-side flex-1"> -->
-      <div class="right-side flex-1 w-full min-w-0">
-        <app-ui-card>
-          <div class="flex flex-col gap-4 px-[30px] py-[20px]">
-            <app-page-title>
-              Lorem Lorem Lorem
-            </app-page-title>
-            <app-lorem-chart></app-lorem-chart>
-            <app-page-title>
-              Lorem ipsum dolor sit
-            </app-page-title>
-            <div class="flex flex-col lg:flex-row gap-3 items-stretch min-w-0">
-              <app-assets class="h-full flex-1 min-w-0"></app-assets>
-              <app-risk-chart [risksArray]="riskArray" class="h-full flex-1 min-w-0"></app-risk-chart>
-            </div>
+
+      <!-- right hand side of the dashboard -->
+      <div class="right-side flex-1 w-full min-w-0 min-h-0 h-full">
+        <app-ui-card [inputClass]="'flex flex-col gap-4 px-card-x py-card-y'">
+          <app-page-title>
+            Lorem Lorem Lorem
+          </app-page-title>
+          <app-lorem-chart></app-lorem-chart>
+          <app-page-title>
+            Lorem ipsum dolor sit
+          </app-page-title>
+          <div class="flex flex-col lg:flex-row gap-3 items-stretch min-w-0">
+            <app-assets class="h-full flex-1 min-w-0"></app-assets>
+            <app-risk-chart [risksArray]="riskArray" class="h-full flex-1 min-w-0"></app-risk-chart>
           </div>
         </app-ui-card>
       </div>
