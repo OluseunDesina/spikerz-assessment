@@ -1,6 +1,7 @@
 import { Component, computed, Input, input, signal } from '@angular/core';
 import { ChartModule } from 'primeng/chart';
 import { UiCard } from '../ui-card/ui-card';
+import { TooltipItem } from 'chart.js';
 
 interface RiskChartData {
   name: string;
@@ -57,7 +58,7 @@ export class RiskChart {
       },
       tooltip: {
         callbacks: {
-          label: (ctx: any) => {
+          label: (ctx: TooltipItem<'doughnut'>) => {
             const label = ctx.label || '';
             const value = ctx.parsed || 0;
             return `${label}: ${value}`;

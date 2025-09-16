@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
+  inject,
   OnInit,
   signal,
 } from '@angular/core';
@@ -10,12 +11,12 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TooltipModule } from 'primeng/tooltip';
 
-type NavItem = {
+interface NavItem {
   id: string;
   label: string;
   icon: 'grid' | 'alert' | 'cube' | 'asterisk' | 'wrench' | 'doc' | 'hash';
   route?: string;
-};
+}
 
 @Component({
   selector: 'app-sidebar',
@@ -37,7 +38,7 @@ export class Sidebar implements OnInit {
   ]);
   private readonly LG_BREAKPOINT = 1024; // Tailwind lg
 
-  constructor(private sanitizer: DomSanitizer) {}
+  private sanitizer = inject(DomSanitizer);
 
   ngOnInit() {
     this.setCollapsedByViewport();

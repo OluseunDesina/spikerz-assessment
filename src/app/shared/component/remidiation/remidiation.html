@@ -1,6 +1,7 @@
-<!-- app-asset-summary-card.component.html -->
 <app-ui-card>
-  <div class="p-3 cursor-pointer" (click)="toggleExpanded()">
+  <div class="p-3 cursor-pointer" (click)="toggleExpanded()" role="button" tabindex="0"
+    (keydown.enter)="toggleExpanded()" (keydown.space)="toggleExpanded()" [attr.aria-expanded]="expanded()"
+    [attr.aria-controls]="'remediation-details'">
     <h3 class="px-2 pt-1 pb-2  font-bold">
       <ng-content select=".server-name"></ng-content>
     </h3>
@@ -34,11 +35,11 @@
       </div>
     </div>
     <!-- Expanded body with smooth transition -->
-    <div class="mt-4 overflow-hidden transition-[max-height] duration-300 ease-out"
+    <div id="remediation-details" class="mt-4 overflow-hidden transition-[max-height] duration-300 ease-out"
       [style.maxHeight]="expanded() ? '240px' : '0px'">
       <p class="text-gray-700 leading-6 transform transition-all duration-300" [class.opacity-100]="expanded()"
         [class.opacity-0]="!expanded()" [class.translate-y-0]="expanded()" [class.-translate-y-1]="!expanded()">
-        <ng-content .server-desc></ng-content>
+        <ng-content select=".server-desc"></ng-content>
       </p>
     </div>
   </div>
