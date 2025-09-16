@@ -15,6 +15,11 @@
 
   <!-- Main nav -->
   <nav class="px-5 pt-8 gap-y-2">
+    @if (collapsed()) {
+    <a [routerLink]="'/'" class="w-18 h-18 mx-auto rounded-xl mb-5">
+      <img src="logo.jpeg" alt="">
+    </a>
+    }
     @for (item of MenuItems(); track item.id) {
     <a [routerLink]="item.route" routerLinkActive="active"
       class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-gray-700 transition hover:bg-slate-50"
