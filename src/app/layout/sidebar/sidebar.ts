@@ -10,6 +10,7 @@
  * - activeRoute: computed from Router events for highlight state.
  */
 import { NgClass } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -31,7 +32,13 @@ interface NavItem {
 
 @Component({
   selector: 'app-sidebar',
-  imports: [NgClass, RouterLink, RouterLinkActive, TooltipModule],
+  imports: [
+    NgClass,
+    RouterLink,
+    RouterLinkActive,
+    TooltipModule,
+    NgOptimizedImage,
+  ],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

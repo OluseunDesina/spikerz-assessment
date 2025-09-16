@@ -17,7 +17,7 @@
   <nav class="px-5 pt-8 gap-y-3">
     @if (collapsed()) {
     <a [routerLink]="'/'" class="w-18 h-18 mx-auto rounded-xl ">
-      <img class="my-3" src="logo.jpeg" alt="">
+      <img class="my-3" ngSrc="logo.jpeg" width="72" height="72" alt="App logo" decoding="async" loading="lazy" />
     </a>
     }
     @for (item of MenuItems(); track item.id) {
